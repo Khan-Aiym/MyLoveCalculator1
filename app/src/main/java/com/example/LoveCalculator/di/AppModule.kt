@@ -33,7 +33,7 @@ AppModule {
     }
     @Provides
     @Singleton
-    fun providePreferences(@ApplicationContext context: Context) : Prefs {
-        return Prefs(context)
+    fun providePreferences(@ApplicationContext context: Context) : SharedPreferences {
+        return context.getSharedPreferences("share-prefs",Context.MODE_PRIVATE)
     }
 }
